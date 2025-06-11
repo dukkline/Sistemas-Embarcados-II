@@ -1,12 +1,12 @@
 'use client'
 
 import Menu from '@/components/Menu';
-import AccountIcon from '@/assets/accountcircle.png'
-import duccline from '@/assets/duccline.jpg'
+import AccountIcon from '@/assets/accountcircle.png';
+import duccline from '@/assets/duccline.jpg';
 import NormalButton from '@/components/Buttons/NormalButton';
 import PublishIcon from '@mui/icons-material/Publish';
 import LogoutIcon from '@mui/icons-material/Logout';
-import { useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation';
 import { getAuth, updateProfile } from "firebase/auth";
 import { useState, useEffect } from "react";
 import { firebaseConfig } from "@/pages/Firebase";

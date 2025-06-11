@@ -2,7 +2,7 @@ import NormalButton from "./Buttons/NormalButton";
 import EdgesensorHighRoundedIcon from '@mui/icons-material/EdgesensorHighRounded';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
-import duccline from "@/assets/duccline.jpg"
+import duccline from "@/assets/duccline.jpg";
 import { useRouter } from 'next/navigation'
 import { getAuth } from "firebase/auth";
 import { useState, useEffect } from "react";
