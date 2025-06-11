@@ -79,7 +79,7 @@ export default function Conta(){
     
     
     return(
-        <>
+        <div className="flex">
         <Menu/>
         <div className="flex justify-center items-center bg-purple-gradient shadow-xl h-especifissimo px-12 border-b-2 border-black"> 
             <div className="px-12 py-9 w-1/3 bg-purpler-gradient border-4 border-white justify-center items-center flex flex-col gap-2 rounded-xl shadow-lg hover:shadow-2xl transition ease-linear">
@@ -93,7 +93,7 @@ export default function Conta(){
                 <NormalButton text="Sair da Conta" icon={<LogoutIcon/>} onclick={() => router.push('/login')}/>
             </div>
         </div>
-        </>
+        </div>
     );
     
 }

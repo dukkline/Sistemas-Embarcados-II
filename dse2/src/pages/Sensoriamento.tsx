@@ -105,49 +105,9 @@ export default function Sensoriamento(){
     }
 
     return(
-        <div className="bg-purple-gradient h-screen">
-        <Menu/>
-        <div className="flex p-3 justify-center items-center h-especifissimo pb-10">
-            <div className="w-1/2 p-9 bg-purpler-gradient rounded-3xl flex flex-col gap-7 border-4 border-white shadow-lg hover:shadow-2xl transition ease-linear">
-                <div className="flex flex-col text-white justify-center items-center">
-                    <h1 className="text-center text-5xl"><u>‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ Sensoriamento‎ ‎ ‎ ‎  ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎</u></h1>
-                    <div className="my-5 text-4xl justify-between items-between items-center h-1/5 flex w-5/6">
-                        <p>Usuário atual: {nome}</p>
-                        <div className="flex h-4/5 justify-center items-center gap-2">
-                            <img src={Lure.src} alt="" className="h-20 rounded-3xl border-2 border-white"/>
-                            <p>Lure-3S</p>
-                        </div>
-                    </div>
-                    <div className="flex w-5/6 px-4 bg-white py-3 rounded-xl justify-center">
-                        <div className="w-full flex justify-center items-center p-3 justify-around items-around">
-                            <div className="w-1/4 flex flex-col bg-rose-50 text-rose-600 justify-center items-center border-4 border-rose-600 px-3 py-1.5 rounded-xl">
-                                <ThermostatIcon fontSize="large"/>
-                                <p className="text-2xl">{temp}°C</p>
-                                <p className="text-md">Temperatura</p>
-                            </div>
-                            <div className="w-1/4 flex flex-col bg-blue-50 text-blue-600 justify-center items-center border-4 border-blue-600 px-3 py-1.5 rounded-xl">
-                                <WaterDropIcon fontSize="large"/>
-                                <p className="text-2xl">{umi}%</p>
-                                <p className="text-md">Umidade</p>
-                            </div>
-                            <div className="w-1/4 flex flex-col bg-gray-200 text-gray-700 justify-center items-center border-4 border-gray-700 px-3 py-1.5 rounded-xl">
-                                <LocalFireDepartmentIcon fontSize="large"/>
-                                <p className="text-2xl">{fum}%</p>
-                                <p className="text-md">Fumaça</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="flex flex-col gap-3 justify-center items-center">
-                    <h1 className="text-5xl text-white text-center mb-1"><u>‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ Servo-Motor ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎</u></h1>
-                    <div className="flex w-5/6 justify-between items-center py-2">
-                        <OffButton text="Desligar" type="button" onclick={Desligar} icon={<FlashOffRoundedIcon/>}/>
-                        <EstadoServo/>
-                        <OnButton text="Ligar" type="button" onclick={Ligar} icon={<FlashOnRoundedIcon/>}/> 
-                    </div>
-                </div>  
-            </div>
-        </div>
+        <div className="bg-purple-gradient h-screen flex">
+            <Menu/>
+
         </div>
     );
 }

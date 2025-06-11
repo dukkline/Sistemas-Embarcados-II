@@ -27,27 +27,20 @@ export default function Menu(){
         }
     });
     return(
-        <div className="flex justify-between items-center bg-purpler-gradient shadow-xl h-especifico px-12 border-b-2 border-black"> 
-            <div className=" flex justify-start items-center gap-12">    
+        <div className="flex flex-col justify-around items-center bg-purpler-gradient shadow-xl h-especifico w-especifissimo px-12 border-b-2 border-black"> 
                 <NormalButton
-                text = "Sensoriamento"
+                text = ""
                 icon = {<EdgesensorHighRoundedIcon/>}
                 onclick={() => router.push('/sensoriamento')}
                 />
                 <NormalButton
-                text = "Sobre"
+                text = ""
                 icon = {<InfoOutlinedIcon/>}
                 onclick={() => router.push('/sobre')}
                 />
-            </div>
-            <div className="text-white pl-3 py-2 rounded-full flex justify-center items-center hover:bg-violet-900 hover:transition ease-linear text-2xl">
-                <img src={duccline.src} alt="" className="w-11 rounded-full border-2 border-white"/>
                 <NormalButton
-                text = {nome}
                 onclick={() => router.push('/conta')}
                 />
-
-            </div>
         </div>
     );
 }

@@ -38,11 +38,19 @@ body {
   width: 98%;
 }
 
+.w-especifissimo{
+  width: 20vh;
+}
+
 .h-especifico{
-  height: 10vh;
+  height: 100vh;
 }
 
 .h-especifissimo{
   height: 90vh
+}
+
+.h-vaitomanocu{
+  height: 10vh
 }
 
