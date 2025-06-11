@@ -35,7 +35,7 @@ export default function Login() {
 
   return (
     <>
-      <div className="flex justify-center items-center bg-purpler-gradient shadow-xl h-especifico px-12 border-b-2 border-black">
+      <div className="flex justify-center items-center bg-purpler-gradient shadow-xl h-vaitomanocu px-12 border-b-2 border-black">
         <h1 className="text-white text-4xl">Log-In</h1>
       </div>
       <div className="justify-center items-center bg-purple-gradient flex gap-28 h-especifissimo">
