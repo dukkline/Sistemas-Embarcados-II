@@ -16,7 +16,7 @@ const database = getDatabase(app);
 export default function Sobre() {
     const router = useRouter();
     return (
-        <div className="bg-purple-gradient h-full flex flex-row">
+        <div className="bg-purple-gradient h-screen flex flex-row">
             <div className='mr-20'>
                 <Menu />
             </div>
