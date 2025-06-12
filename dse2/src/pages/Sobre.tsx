@@ -16,7 +16,7 @@ const database = getDatabase(app);
 export default function Sobre() {
     const router = useRouter();
     return (
-        <div className="bg-purple-gradient h-screen flex flex-row">
+        <div className="bg-purple-gradient h-full flex flex-row">
             <div className='mr-20'>
                 <Menu />
             </div>
@@ -42,7 +42,32 @@ export default function Sobre() {
                             funcao="Gerente"
                             // imagem=""
                             horario="25:99"
-                            onclick={() => { set(ref(database, 'reconhecimento'), 'johnkennedy'); router.push('/sensoriamento') }} />
+                            onclick={() => { set(ref(database, 'reconhecimento'), 'johnkennedy'); router.push('/sensoriamento') }} 
+                        />
+
+                        <FuncionarioButton
+                            nome="John Kennedy"
+                            funcao="Gerente"
+                            // imagem=""
+                            horario="25:99"
+                            onclick={() => { set(ref(database, 'reconhecimento'), 'johnkennedy'); router.push('/sensoriamento') }} 
+                        />
+
+                        <FuncionarioButton
+                            nome="John Kennedy"
+                            funcao="Gerente"
+                            // imagem=""
+                            horario="25:99"
+                            onclick={() => { set(ref(database, 'reconhecimento'), 'johnkennedy'); router.push('/sensoriamento') }} 
+                        />
+
+                        <FuncionarioButton
+                            nome="John Kennedy"
+                            funcao="Gerente"
+                            // imagem=""
+                            horario="25:99"
+                            onclick={() => { set(ref(database, 'reconhecimento'), 'johnkennedy'); router.push('/sensoriamento') }} 
+                        />
                     </div>
                 </div>
             </div>
