@@ -14,7 +14,7 @@ export default function FuncionarioButton({nome="", funcao="", imagem="https://e
     return(
         <div
             
-            className="bg-white text-white rounded-2xl flex justify-between items-center text-2xl hover:shadow-xl w-xs h-60" 
+            className="my-5 bg-white text-white rounded-2xl flex justify-between items-center text-2xl hover:shadow-xl w-xs h-60" 
         >
             <div className="flex pl-5">
                 <img src={imagem} className="rounded-2xl border-4 rounded-full border-indigo-950 w-1/2 mx-2"/>
