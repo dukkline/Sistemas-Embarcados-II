@@ -14,7 +14,9 @@ export default function Sobre(){
             <FuncionarioButton
                 nome="John Kennedy"
                 funcao="Gerente"
-                imagem="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9zcd-dwhaQPEzwe_fWYDMtVVze35Ad5nMHkSk7nxMpBrOtH3_C0wVTz_z6qkVjtYdydw&usqp=CAU"/>
+                // imagem=""
+                horario="25:99"
+                onclick={()=>{}}/>
         </div>
     );
 }
