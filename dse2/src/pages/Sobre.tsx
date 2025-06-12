@@ -14,7 +14,7 @@ const database = getDatabase(app);
 export default function Sobre() {
 
     return (
-        <div className="bg-purple-gradient h-full flex flex-row">
+        <div className="bg-purple-gradient flex flex-row">
             <div className='mr-20'>
                 <Menu />
             </div>
