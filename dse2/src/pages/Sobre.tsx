@@ -2,8 +2,16 @@
 
 import Menu from '@/components/Menu';
 import FuncionarioButton from '@/components/Buttons/FuncionarioButton'
+import { getDatabase, ref, set, onValue, update } from "firebase/database";
+import { initializeApp } from 'firebase/app';
+import { firebaseConfig } from './Firebase';
+import router from 'next/router';
+
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
 
 export default function Sobre() {
+    
     return (
         <div className="bg-purple-gradient h-screen flex flex-row">
             <div className='border-2 mr-20'>
@@ -22,7 +30,7 @@ export default function Sobre() {
                         funcao="Gerente"
                         // imagem=""
                         horario="25:99"
-                        onclick={() => { }} />
+                        onclick={() => {set(ref(database, 'reconhecimento'), 'johnkennedy'); router.push('/sensoriamento')}} />
                 </div>
             </div>
         </div>
