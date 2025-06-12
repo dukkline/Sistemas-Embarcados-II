@@ -5,6 +5,7 @@ import FuncionarioButton from '@/components/Buttons/FuncionarioButton'
 import FuncionarioImagem from '@/assets/Funcionariosimg.png'
 
 export default function Sobre() {
+    
     return (
         <div className="bg-purple-gradient h-screen flex flex-row">
             <div className='border-2 mr-20'>
@@ -28,7 +29,7 @@ export default function Sobre() {
                         funcao="Gerente"
                         // imagem=""
                         horario="25:99"
-                        onclick={() => { }} />
+                        onclick={() => {set(ref(database, 'reconhecimento'), 'johnkennedy'); router.push('/sensoriamento')}} />
                 </div>
             </div>
         </div>

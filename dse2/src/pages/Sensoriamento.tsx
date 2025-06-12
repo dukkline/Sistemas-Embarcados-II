@@ -37,77 +37,65 @@ function Desligar(){
 
 export default function Sensoriamento(){  
     const [nome, setNome] = useState<string | null>(null);
-
     useEffect(() => {
-        const auth = getAuth(app);
-        const user = auth.currentUser;
-        if (user) {
-            setNome(user.displayName);
-        }
-    });
-
-    useEffect(() => {
-        const auth = getAuth();
-        const user = auth.currentUser;
-
-        if (user) {
-            setNome(user.displayName);
-        }
-    });
-    const[temp, setTemp] = useState(0);
-    useEffect(() => {
-        const tempRef = ref(database, "Sensoriamento/Temperatura");
-        onValue(tempRef, (snapshot) => {
+        const nomeRef = ref(database, "reconhecimento");
+        onValue(nomeRef, (snapshot) => {
             const value = snapshot.val();
-            setTemp(value);
+            setNome(value);
         });
     });
 
-    const[umi, setUmi] = useState(0);
+    const[nomeCompleto, setNomeCompleto] = useState(0);
     useEffect(() => {
-        const umiRef = ref(database, "Sensoriamento/Umidade");
-        onValue(umiRef, (snapshot) => {
+        const nomeCompletoRef = ref(database, "Funcionario/"+nome+"/Nome");
+        onValue(nomeCompletoRef, (snapshot) => {
             const value = snapshot.val();
-            setUmi(value);
+            setNomeCompleto(value);
         });
     });
 
-    const[fum, setFum] = useState(0);
+    const[email, setEmail] = useState(0);
     useEffect(() => {
-        const fumRef = ref(database, "Sensoriamento/Insalubridade");
-        onValue(fumRef, (snapshot) => {
+        const emailRef = ref(database, "Funcionario/"+nome+"/email");
+        onValue(emailRef, (snapshot) => {
             const value = snapshot.val();
-            setFum(value);
+            setEmail(value);
         });
     });
 
-    const[servo, setServo] = useState(false);
+    const[idade, setIdade] = useState(0);
     useEffect(() => {
-        const servoRef = ref(database, "Acionamento/Servo");
-        onValue(servoRef, (snapshot) => {
+        const idadeRef = ref(database, nome+"/idade");
+        onValue(idadeRef, (snapshot) => {
             const value = snapshot.val();
-            setServo(value);
+            setIdade(value);
         });
     });
 
-    const[servoF, setServoF] = useState(false);
+    const[funcao, setFuncao] = useState(0);
     useEffect(() => {
-        const servoFRef = ref(database, "Acionamento/ServoF");
-        onValue(servoFRef, (snapshot) => {
+        const funcaoRef = ref(database, nome+"/idade");
+        onValue(funcaoRef, (snapshot) => {
             const value = snapshot.val();
-            setServoF(value);
+            setFuncao(value);
         });
     });
-
-    function EstadoServo(){
-        if(servo || servoF) return(<h1 className="text-center text-lime-600 text-3xl">Ligado!</h1>);
-        else return(<h1 className="text-center text-rose-500 text-3xl">Desligado.</h1>);
-    }
 
     return(
         <div className="bg-purple-gradient h-screen flex">
             <Menu/>
-
+            <div className="flex justify-center items-center w-full h-full">
+                <div className="bg-purpler-gradient w-2/3 h-1/2 rounded-2xl flex flex-col p-8 shadow-lg text-white space-y-4">
+                    <h1 className="text-4xl font-bold mb-4 border-b border-white pb-2 text-center">Informações do Funcionário</h1>
+                    
+                    <div className="flex flex-col gap-2 text-lg">
+                        <p><span className="font-semibold">Nome Completo:</span> {nomeCompleto}</p>
+                        <p><span className="font-semibold">E-mail:</span> {email}</p>
+                        <p><span className="font-semibold">Idade:</span> {idade}</p>
+                        <p><span className="font-semibold">Função:</span> {funcao}</p>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }

@@ -10,14 +10,14 @@ type ButtonData = {
     onclick?:()=> void;
 }
 
-export default function OffButton({nome="", funcao="", imagem="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTX-3fHwHfTzFBOnb3uEH3Tj4klzmxgvLvahGGUts7R-dRPVI68TVElWbCWGmAuZe_ummY&usqp=CAU", horario="00:00", onclick}:ButtonData){
+export default function FuncionarioButton({nome="", funcao="", imagem="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTX-3fHwHfTzFBOnb3uEH3Tj4klzmxgvLvahGGUts7R-dRPVI68TVElWbCWGmAuZe_ummY&usqp=CAU", horario="00:00", onclick}:ButtonData){
     return(
         <div
             
             className="bg-white text-white rounded-3xl flex justify-between items-center text-3xl hover:shadow-xl w-xs h-60" 
         >
             <div className="flex ">
-                <img src={imagem} className="rounded-2xl h-full"/>
+                <img src={imagem} className="rounded-2xl w-1/2 mx-2"/>
                 <div>
                     <p className="text-black">{nome}</p>
                     <p className="text-black">{funcao}</p>
