@@ -27,14 +27,6 @@ const styles = {
   
   };
 
-function Ligar(){
-    set(ref(database, 'Acionamento/ServoF'), true);
-}
-
-function Desligar(){
-    set(ref(database, 'Acionamento/ServoF'), false);
-}
-
 export default function Sensoriamento(){  
     const [nome, setNome] = useState<string | null>(null);
     useEffect(() => {
@@ -45,7 +37,7 @@ export default function Sensoriamento(){
         });
     });
 
-    const[nomeCompleto, setNomeCompleto] = useState(0);
+    const[nomeCompleto, setNomeCompleto] = useState("");
     useEffect(() => {
         const nomeCompletoRef = ref(database, "Funcionario/"+nome+"/Nome");
         onValue(nomeCompletoRef, (snapshot) => {
@@ -54,7 +46,7 @@ export default function Sensoriamento(){
         });
     });
 
-    const[email, setEmail] = useState(0);
+    const[email, setEmail] = useState('');
     useEffect(() => {
         const emailRef = ref(database, "Funcionario/"+nome+"/email");
         onValue(emailRef, (snapshot) => {
@@ -63,18 +55,18 @@ export default function Sensoriamento(){
         });
     });
 
-    const[idade, setIdade] = useState(0);
+    const[idade, setIdade] = useState("");
     useEffect(() => {
-        const idadeRef = ref(database, nome+"/idade");
+        const idadeRef = ref(database, "Funcionario/"+nome+"/idade");
         onValue(idadeRef, (snapshot) => {
             const value = snapshot.val();
             setIdade(value);
         });
     });
 
-    const[funcao, setFuncao] = useState(0);
+    const[funcao, setFuncao] = useState("");
     useEffect(() => {
-        const funcaoRef = ref(database, nome+"/idade");
+        const funcaoRef = ref(database, "Funcionario/"+nome+"/funcao");
         onValue(funcaoRef, (snapshot) => {
             const value = snapshot.val();
             setFuncao(value);
@@ -88,8 +80,8 @@ export default function Sensoriamento(){
                 <div className="bg-purpler-gradient w-2/3 h-1/2 rounded-2xl flex flex-col p-8 shadow-lg text-white space-y-4">
                     <h1 className="text-4xl font-bold mb-4 border-b border-white pb-2 text-center">Informações do Funcionário</h1>
                     
-                    <div className="flex flex-col gap-2 text-lg">
-                        <p><span className="font-semibold">Nome Completo:</span> {nomeCompleto}</p>
+                    <div className="flex flex-col gap-2 text-2xl justify-center">
+                        <p className="bg-lime-700 w-1/3 p-2 rounded-2xl text-center"><span className="font-semibold">Nome Completo:</span> {nomeCompleto}</p>
                         <p><span className="font-semibold">E-mail:</span> {email}</p>
                         <p><span className="font-semibold">Idade:</span> {idade}</p>
                         <p><span className="font-semibold">Função:</span> {funcao}</p>

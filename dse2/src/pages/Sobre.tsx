@@ -6,13 +6,15 @@ import FuncionarioImagem from '@/assets/Funcionariosimg.png'
 import { getDatabase, ref, set, onValue, update } from "firebase/database";
 import { initializeApp } from 'firebase/app';
 import { firebaseConfig } from './Firebase';
-import router from 'next/router';
+import { useRouter } from 'next/navigation';
 
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
-export default function Sobre() {
 
+
+export default function Sobre() {
+    const router = useRouter();
     return (
         <div className="bg-purple-gradient h-screen flex flex-row">
             <div className='mr-20'>
