@@ -22,7 +22,7 @@ export default function NormalButton({text="", width="", icon, type='button', on
         <button 
             type={type}
             onClick={onclick}
-            className="text-white px-4 py-5 rounded-full flex justify-center items-center hover:bg-violet-900 hover:transition ease-linear text-2xl gap-1 w-20" 
+            className="text-white p-4 rounded-full flex justify-center items-center hover:bg-violet-900 hover:transition ease-linear text-2xl gap-1 w-20" 
         >
             {icon}
             <Decidir/>

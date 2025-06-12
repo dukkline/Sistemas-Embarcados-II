@@ -4,16 +4,7 @@ import { getDatabase, ref, set, onValue, update } from "firebase/database";
 import { initializeApp } from 'firebase/app';
 import { useEffect, useState } from "react";
 import { firebaseConfig } from "./Firebase";
-import { getAuth } from "firebase/auth";
-import OnButton from "@/components/Buttons/OnButton";
-import OffButton from "@/components/Buttons/OffButton";
-import FlashOnRoundedIcon from '@mui/icons-material/FlashOnRounded';
-import FlashOffRoundedIcon from '@mui/icons-material/FlashOffRounded';
 import Menu from '@/components/Menu';
-import ThermostatIcon from '@mui/icons-material/Thermostat';
-import WaterDropIcon from '@mui/icons-material/WaterDrop';
-import LocalFireDepartmentIcon from '@mui/icons-material/LocalFireDepartment';
-import Lure from '@/assets/lure-3s.jpg'
 
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
@@ -73,20 +64,34 @@ export default function Sensoriamento(){
         });
     });
 
+    const[horario, setHorario] = useState("");
+    useEffect(() => {
+        const horarioRef = ref(database, "Pontualidade/"+nome+"/horario");
+        onValue(horarioRef, (snapshot) => {
+            const value = snapshot.val();
+            setHorario(value);
+        });
+    });
+
     return(
         <div className="bg-purple-gradient h-screen flex">
             <Menu/>
-            <div className="flex justify-center items-center w-full h-full">
+            <div className="flex flex-col gap-6 justify-center items-center w-full h-full">
                 <div className="bg-purpler-gradient w-2/3 h-1/2 rounded-2xl flex flex-col p-8 shadow-lg text-white space-y-4">
-                    <h1 className="text-4xl font-bold mb-4 border-b border-white pb-2 text-center">Informações do Funcionário</h1>
+                    <h1 className="text-5xl font-semibold mb-4 border-b border-white pb-2 text-center">Informações do Funcionário</h1>
                     
-                    <div className="flex flex-col gap-2 text-2xl justify-center">
-                        <p className="bg-lime-700 w-1/3 p-2 rounded-2xl text-center"><span className="font-semibold">Nome Completo:</span> {nomeCompleto}</p>
-                        <p><span className="font-semibold">E-mail:</span> {email}</p>
-                        <p><span className="font-semibold">Idade:</span> {idade}</p>
-                        <p><span className="font-semibold">Função:</span> {funcao}</p>
+                    <div className="flex flex-row gap-2 text-2xl justify-between h-full px-16 py-8 items-center">
+                        <div className="flex flex-col justify-between w-1/2 h-full items-center">
+                            <p className="bg-lime-700 w-2/3 p-2 rounded-2xl text-center"><span className="font-semibold">Nome Completo:</span> {nomeCompleto}</p>
+                            <p className="bg-lime-700 w-2/3 p-2 rounded-2xl text-center"><span className="font-semibold">E-mail:</span> {email}</p>
+                        </div>
+                        <div className="flex flex-col justify-between w-1/2 h-full items-center">
+                            <p className="bg-lime-700 w-2/3 p-2 rounded-2xl text-center flex justify-center items-center gap-1"><span className="font-semibold">Idade:</span> {idade} <span>anos</span></p>
+                            <p className="bg-lime-700 w-2/3 p-2 rounded-2xl text-center flex justify-center items-center gap-1"><span className="font-semibold">Função:</span> {funcao}</p>
+                        </div>                                                    
                     </div>
                 </div>
+                <h1 className="text-4xl bg-lime-700 p-4 rounded-2xl text-center"><span className="font-semibold">Último Registro:</span> {horario}</h1>
             </div>
         </div>
     );

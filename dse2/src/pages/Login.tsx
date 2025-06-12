@@ -3,7 +3,6 @@
 import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
 import OnButton from '@/components/Buttons/OnButton';
 import Lure from '@/assets/lure.jpg'
-import Menu from '@/components/Menu';
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation'
 import { get, getDatabase, ref } from 'firebase/database';
