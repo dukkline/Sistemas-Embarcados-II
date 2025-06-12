@@ -27,7 +27,10 @@ export default function Menu(){
         }
     });
     return(
-        <div className="flex flex-col justify-around items-center bg-purpler-gradient shadow-xl h-especifico w-especifissimo px-12 border-b-2 border-black"> 
+        <div className="flex flex-col justify-start py-10 items-center bg-purpler-gradient shadow-xl h-especifico w-especifissimo px-12 border-b-2 border-black"> 
+                <NormalButton
+                onclick={() => router.push('/conta')}
+                />
                 <NormalButton
                 text = ""
                 icon = {<EdgesensorHighRoundedIcon/>}
@@ -38,9 +41,7 @@ export default function Menu(){
                 icon = {<InfoOutlinedIcon/>}
                 onclick={() => router.push('/sobre')}
                 />
-                <NormalButton
-                onclick={() => router.push('/conta')}
-                />
+                
         </div>
     );
 }
