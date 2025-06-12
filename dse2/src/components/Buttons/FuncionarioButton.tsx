@@ -14,19 +14,19 @@ export default function FuncionarioButton({nome="", funcao="", imagem="https://e
     return(
         <div
             
-            className="bg-white text-white rounded-3xl flex justify-between items-center text-3xl hover:shadow-xl w-xs h-60" 
+            className="bg-white text-white rounded-2xl flex justify-between items-center text-2xl hover:shadow-xl w-xs h-60" 
         >
-            <div className="flex ">
-                <img src={imagem} className="rounded-2xl w-1/2 mx-2"/>
+            <div className="flex pl-5">
+                <img src={imagem} className="rounded-2xl border-4 rounded-full border-indigo-950 w-1/2 mx-2"/>
                 <div>
-                    <p className="text-black">{nome}</p>
-                    <p className="text-black">{funcao}</p>
+                    <p className="text-black font-bold py-2">{nome}</p>
+                    <p className="text-black font-bold">{funcao}</p>
                 </div>
             </div>
             <div className="flex h-full">
-                <p className="text-black">{horario}</p>
-                <div className="h-full w-32 bg-purpler-gradient rounded-2xl hover:bg-black hover:transition ease-linear justify-center items-center flex">
-                    <button onClick={onclick} className="text-center">Conferir</button>
+                <p className="text-black p-5 font-bold text-xl">{horario}</p>
+                <div className="h-full text-3xl justify-center border-4 w-40 bg-purpler-gradient rounded-2xl hover:bg-black hover:transition ease-linear justify-center items-center flex">
+                    <button onClick={onclick} className="text-center font-bold">Conferir</button>
                 </div>
             </div>
         </div>
